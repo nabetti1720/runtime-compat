@@ -2162,6 +2162,10 @@
     "code": "bcd.testConstructor('Blob')",
     "exposure": ["Window", "Worker"]
   },
+  "api.Blob.bytes": {
+    "code": "(function () {\n  var instance;\n  try {\n    instance = new Blob();\n  } catch (e) {\n    instance = new BlobBuilder();\n  }\n  return !!instance && \"bytes\" in instance;\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
   "api.Blob.size": {
     "code": "(function () {\n  var instance;\n  try {\n    instance = new Blob();\n  } catch (e) {\n    instance = new BlobBuilder();\n  }\n  return !!instance && \"size\" in instance;\n})();\n",
     "exposure": ["Window", "Worker"]
@@ -4921,6 +4925,10 @@
   },
   "api.Credential.type": {
     "code": "\"Credential\" in self && \"type\" in Credential.prototype",
+    "exposure": ["Window"]
+  },
+  "api.Credential.willRequestConditionalCreation_static": {
+    "code": "\"Credential\" in self && \"willRequestConditionalCreation\" in Credential",
     "exposure": ["Window"]
   },
   "api.CredentialsContainer": {
@@ -8590,6 +8598,10 @@
   },
   "api.Document.hasStorageAccess": {
     "code": "(function () {\n  var instance = document;\n  return !!instance && \"hasStorageAccess\" in instance;\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.Document.hasUnpartitionedCookieAccess": {
+    "code": "(function () {\n  var instance = document;\n  return !!instance && \"hasUnpartitionedCookieAccess\" in instance;\n})();\n",
     "exposure": ["Window"]
   },
   "api.Document.head": {
@@ -13678,16 +13690,16 @@
     "code": "(function () {\n  var gpu = navigator.gpu;\n  if (!gpu) {\n    return { result: false, message: \"gpu is falsy\" };\n  }\n  var promise = gpu.requestAdapter();\n  if (!promise) {\n    return { result: false, message: \"Promise variable is falsy\" };\n  }\n  return promise.then(function (instance) {\n    return !!instance && \"features\" in instance;\n  });\n})();\n",
     "exposure": ["Window", "Worker"]
   },
+  "api.GPUAdapter.info": {
+    "code": "(function () {\n  var gpu = navigator.gpu;\n  if (!gpu) {\n    return { result: false, message: \"gpu is falsy\" };\n  }\n  var promise = gpu.requestAdapter();\n  if (!promise) {\n    return { result: false, message: \"Promise variable is falsy\" };\n  }\n  return promise.then(function (instance) {\n    return !!instance && \"info\" in instance;\n  });\n})();\n",
+    "exposure": ["Window", "Worker"]
+  },
   "api.GPUAdapter.isFallbackAdapter": {
     "code": "(function () {\n  var gpu = navigator.gpu;\n  if (!gpu) {\n    return { result: false, message: \"gpu is falsy\" };\n  }\n  var promise = gpu.requestAdapter();\n  if (!promise) {\n    return { result: false, message: \"Promise variable is falsy\" };\n  }\n  return promise.then(function (instance) {\n    return !!instance && \"isFallbackAdapter\" in instance;\n  });\n})();\n",
     "exposure": ["Window", "Worker"]
   },
   "api.GPUAdapter.limits": {
     "code": "(function () {\n  var gpu = navigator.gpu;\n  if (!gpu) {\n    return { result: false, message: \"gpu is falsy\" };\n  }\n  var promise = gpu.requestAdapter();\n  if (!promise) {\n    return { result: false, message: \"Promise variable is falsy\" };\n  }\n  return promise.then(function (instance) {\n    return !!instance && \"limits\" in instance;\n  });\n})();\n",
-    "exposure": ["Window", "Worker"]
-  },
-  "api.GPUAdapter.requestAdapterInfo": {
-    "code": "(function () {\n  var gpu = navigator.gpu;\n  if (!gpu) {\n    return { result: false, message: \"gpu is falsy\" };\n  }\n  var promise = gpu.requestAdapter();\n  if (!promise) {\n    return { result: false, message: \"Promise variable is falsy\" };\n  }\n  return promise.then(function (instance) {\n    return !!instance && \"requestAdapterInfo\" in instance;\n  });\n})();\n",
     "exposure": ["Window", "Worker"]
   },
   "api.GPUAdapter.requestDevice": {
@@ -20875,6 +20887,10 @@
     "code": "(function () {\n  var instance = navigator.mediaSession;\n  return !!instance && \"setPositionState\" in instance;\n})();\n",
     "exposure": ["Window"]
   },
+  "api.MediaSession.setScreenshareActive": {
+    "code": "(function () {\n  var instance = navigator.mediaSession;\n  return !!instance && \"setScreenshareActive\" in instance;\n})();\n",
+    "exposure": ["Window"]
+  },
   "api.MediaSource": {
     "code": "(function () {\n  if (!(\"MediaSource\" in self)) {\n    return { result: false, message: \"MediaSource is not defined\" };\n  }\n  var instance = new MediaSource();\n  return !!instance;\n})();\n",
     "exposure": ["Window", "Worker"]
@@ -21888,6 +21904,10 @@
     "code": "\"MLGraphBuilder\" in self && \"log\" in MLGraphBuilder.prototype",
     "exposure": ["Window", "Worker"]
   },
+  "api.MLGraphBuilder.logicalNot": {
+    "code": "\"MLGraphBuilder\" in self && \"logicalNot\" in MLGraphBuilder.prototype",
+    "exposure": ["Window", "Worker"]
+  },
   "api.MLGraphBuilder.lstm": {
     "code": "\"MLGraphBuilder\" in self && \"lstm\" in MLGraphBuilder.prototype",
     "exposure": ["Window", "Worker"]
@@ -21922,10 +21942,6 @@
   },
   "api.MLGraphBuilder.neg": {
     "code": "\"MLGraphBuilder\" in self && \"neg\" in MLGraphBuilder.prototype",
-    "exposure": ["Window", "Worker"]
-  },
-  "api.MLGraphBuilder.not": {
-    "code": "\"MLGraphBuilder\" in self && \"not\" in MLGraphBuilder.prototype",
     "exposure": ["Window", "Worker"]
   },
   "api.MLGraphBuilder.pad": {
@@ -22760,6 +22776,10 @@
   },
   "api.Navigator.activeVRDisplays": {
     "code": "(function () {\n  var instance = navigator;\n  return !!instance && \"activeVRDisplays\" in instance;\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.Navigator.adAuctionComponents": {
+    "code": "(function () {\n  var instance = navigator;\n  return !!instance && \"adAuctionComponents\" in instance;\n})();\n",
     "exposure": ["Window"]
   },
   "api.Navigator.appCodeName": {
@@ -26476,6 +26496,10 @@
     "code": "\"PushMessageData\" in self && \"blob\" in PushMessageData.prototype",
     "exposure": ["ServiceWorker"]
   },
+  "api.PushMessageData.bytes": {
+    "code": "\"PushMessageData\" in self && \"bytes\" in PushMessageData.prototype",
+    "exposure": ["ServiceWorker"]
+  },
   "api.PushMessageData.json": {
     "code": "\"PushMessageData\" in self && \"json\" in PushMessageData.prototype",
     "exposure": ["ServiceWorker"]
@@ -28231,6 +28255,18 @@
   },
   "api.RTCIceCandidate.usernameFragment": {
     "code": "(function () {\n  var instance = new RTCIceCandidate({\n    candidate:\n      \"candidate:4234997325 1 udp 2043278322 192.168.0.56 44323 typ host\",\n    sdpMid: \"\",\n  });\n  return !!instance && \"usernameFragment\" in instance;\n})();\n",
+    "exposure": ["Window"]
+  },
+  "api.RTCIceCandidatePair": {
+    "code": "\"RTCIceCandidatePair\" in self",
+    "exposure": ["Window"]
+  },
+  "api.RTCIceCandidatePair.local": {
+    "code": "\"RTCIceCandidatePair\" in self && \"local\" in RTCIceCandidatePair.prototype",
+    "exposure": ["Window"]
+  },
+  "api.RTCIceCandidatePair.remote": {
+    "code": "\"RTCIceCandidatePair\" in self && \"remote\" in RTCIceCandidatePair.prototype",
     "exposure": ["Window"]
   },
   "api.RTCIceCandidatePairEvent": {
@@ -30507,6 +30543,10 @@
     "code": "\"Scheduler\" in self && \"postTask\" in Scheduler.prototype",
     "exposure": ["Window", "Worker"]
   },
+  "api.Scheduler.yield": {
+    "code": "\"Scheduler\" in self && \"yield\" in Scheduler.prototype",
+    "exposure": ["Window", "Worker"]
+  },
   "api.Scheduling": {
     "code": "\"Scheduling\" in self",
     "exposure": ["Window"]
@@ -32068,6 +32108,54 @@
   },
   "api.Storage.setItem": {
     "code": "\"Storage\" in self && \"setItem\" in Storage.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle": {
+    "code": "\"StorageAccessHandle\" in self",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.BroadcastChannel": {
+    "code": "\"StorageAccessHandle\" in self && \"BroadcastChannel\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.caches": {
+    "code": "\"StorageAccessHandle\" in self && \"caches\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.createObjectURL": {
+    "code": "\"StorageAccessHandle\" in self && \"createObjectURL\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.estimate": {
+    "code": "\"StorageAccessHandle\" in self && \"estimate\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.getDirectory": {
+    "code": "\"StorageAccessHandle\" in self && \"getDirectory\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.indexedDB": {
+    "code": "\"StorageAccessHandle\" in self && \"indexedDB\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.localStorage": {
+    "code": "\"StorageAccessHandle\" in self && \"localStorage\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.locks": {
+    "code": "\"StorageAccessHandle\" in self && \"locks\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.revokeObjectURL": {
+    "code": "\"StorageAccessHandle\" in self && \"revokeObjectURL\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.sessionStorage": {
+    "code": "\"StorageAccessHandle\" in self && \"sessionStorage\" in StorageAccessHandle.prototype",
+    "exposure": ["Window"]
+  },
+  "api.StorageAccessHandle.SharedWorker": {
+    "code": "\"StorageAccessHandle\" in self && \"SharedWorker\" in StorageAccessHandle.prototype",
     "exposure": ["Window"]
   },
   "api.StorageBucket": {
@@ -44484,8 +44572,16 @@
     "code": "\"XRWebGLDepthInformation\" in self",
     "exposure": ["Window"]
   },
+  "api.XRWebGLDepthInformation.imageIndex": {
+    "code": "\"XRWebGLDepthInformation\" in self && \"imageIndex\" in XRWebGLDepthInformation.prototype",
+    "exposure": ["Window"]
+  },
   "api.XRWebGLDepthInformation.texture": {
     "code": "\"XRWebGLDepthInformation\" in self && \"texture\" in XRWebGLDepthInformation.prototype",
+    "exposure": ["Window"]
+  },
+  "api.XRWebGLDepthInformation.textureType": {
+    "code": "\"XRWebGLDepthInformation\" in self && \"textureType\" in XRWebGLDepthInformation.prototype",
     "exposure": ["Window"]
   },
   "api.XRWebGLLayer": {
@@ -51466,10 +51562,6 @@
     "code": "bcd.testCSSProperty(\"position-try-options\", \"flip-start\")",
     "exposure": ["Window"]
   },
-  "css.properties.position-try-options.inset-area": {
-    "code": "bcd.testCSSProperty(\"position-try-options\", \"inset-area()\")",
-    "exposure": ["Window"]
-  },
   "css.properties.position-try-order": {
     "code": "bcd.testCSSProperty(\"position-try-order\")",
     "exposure": ["Window"]
@@ -53426,6 +53518,10 @@
     "code": "bcd.testCSSProperty(\"text-transform\", \"full-size-kana\")",
     "exposure": ["Window"]
   },
+  "css.properties.text-transform.math-auto": {
+    "code": "bcd.testCSSProperty(\"text-transform\", \"math-auto\")",
+    "exposure": ["Window"]
+  },
   "css.properties.text-underline": {
     "code": "bcd.testCSSProperty(\"text-underline\")",
     "exposure": ["Window"]
@@ -54652,6 +54748,10 @@
   },
   "css.selectors.file-selector-button": {
     "code": "bcd.testCSSSelector(\"::file-selector-button\")",
+    "exposure": ["Window"]
+  },
+  "css.selectors.details-content": {
+    "code": "bcd.testCSSSelector(\"::details-content\")",
     "exposure": ["Window"]
   },
   "css.selectors.host": {

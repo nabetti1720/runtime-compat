@@ -12112,6 +12112,14 @@
         "message": "Constructor passed with no errors"
       },
       {
+        "name": "api.Blob.bytes",
+        "info": {
+          "code": "(function () {\n  var instance;\n  try {\n    instance = new Blob();\n  } catch (e) {\n    instance = new BlobBuilder();\n  }\n  return !!instance && \"bytes\" in instance;\n})();\n",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
         "name": "api.Blob.size",
         "info": {
           "code": "(function () {\n  var instance;\n  try {\n    instance = new Blob();\n  } catch (e) {\n    instance = new BlobBuilder();\n  }\n  return !!instance && \"size\" in instance;\n})();\n",
@@ -15901,6 +15909,14 @@
         "name": "api.Credential.type",
         "info": {
           "code": "\"Credential\" in self && \"type\" in Credential.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.Credential.willRequestConditionalCreation_static",
+        "info": {
+          "code": "\"Credential\" in self && \"willRequestConditionalCreation\" in Credential",
           "exposure": "Window"
         },
         "result": false
@@ -22542,6 +22558,15 @@
         "name": "api.Document.hasStorageAccess",
         "info": {
           "code": "(function () {\n  var instance = document;\n  return !!instance && \"hasStorageAccess\" in instance;\n})();\n",
+          "exposure": "Window"
+        },
+        "result": null,
+        "message": "threw ReferenceError: document is not defined"
+      },
+      {
+        "name": "api.Document.hasUnpartitionedCookieAccess",
+        "info": {
+          "code": "(function () {\n  var instance = document;\n  return !!instance && \"hasUnpartitionedCookieAccess\" in instance;\n})();\n",
           "exposure": "Window"
         },
         "result": null,
@@ -43680,6 +43705,14 @@
         "result": false
       },
       {
+        "name": "api.MediaSession.setScreenshareActive",
+        "info": {
+          "code": "(function () {\n  var instance = navigator.mediaSession;\n  return !!instance && \"setScreenshareActive\" in instance;\n})();\n",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
         "name": "api.MediaSource",
         "info": {
           "code": "(function () {\n  if (!(\"MediaSource\" in self)) {\n    return { result: false, message: \"MediaSource is not defined\" };\n  }\n  var instance = new MediaSource();\n  return !!instance;\n})();\n",
@@ -45389,6 +45422,14 @@
         "result": false
       },
       {
+        "name": "api.MLGraphBuilder.logicalNot",
+        "info": {
+          "code": "\"MLGraphBuilder\" in self && \"logicalNot\" in MLGraphBuilder.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
         "name": "api.MLGraphBuilder.lstm",
         "info": {
           "code": "\"MLGraphBuilder\" in self && \"lstm\" in MLGraphBuilder.prototype",
@@ -45457,14 +45498,6 @@
         "name": "api.MLGraphBuilder.neg",
         "info": {
           "code": "\"MLGraphBuilder\" in self && \"neg\" in MLGraphBuilder.prototype",
-          "exposure": "Window"
-        },
-        "result": false
-      },
-      {
-        "name": "api.MLGraphBuilder.not",
-        "info": {
-          "code": "\"MLGraphBuilder\" in self && \"not\" in MLGraphBuilder.prototype",
           "exposure": "Window"
         },
         "result": false
@@ -46989,6 +47022,14 @@
         "name": "api.Navigator.activeVRDisplays",
         "info": {
           "code": "(function () {\n  var instance = navigator;\n  return !!instance && \"activeVRDisplays\" in instance;\n})();\n",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.Navigator.adAuctionComponents",
+        "info": {
+          "code": "(function () {\n  var instance = navigator;\n  return !!instance && \"adAuctionComponents\" in instance;\n})();\n",
           "exposure": "Window"
         },
         "result": false
@@ -55988,6 +56029,30 @@
         "message": "threw ReferenceError: RTCIceCandidate is not defined"
       },
       {
+        "name": "api.RTCIceCandidatePair",
+        "info": {
+          "code": "\"RTCIceCandidatePair\" in self",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.RTCIceCandidatePair.local",
+        "info": {
+          "code": "\"RTCIceCandidatePair\" in self && \"local\" in RTCIceCandidatePair.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.RTCIceCandidatePair.remote",
+        "info": {
+          "code": "\"RTCIceCandidatePair\" in self && \"remote\" in RTCIceCandidatePair.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
         "name": "api.RTCIceCandidatePairEvent",
         "info": {
           "code": "\"RTCIceCandidatePairEvent\" in self",
@@ -60076,6 +60141,14 @@
         "result": false
       },
       {
+        "name": "api.Scheduler.yield",
+        "info": {
+          "code": "\"Scheduler\" in self && \"yield\" in Scheduler.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
         "name": "api.Scheduling",
         "info": {
           "code": "\"Scheduling\" in self",
@@ -62959,6 +63032,102 @@
         },
         "result": false,
         "message": "threw ReferenceError: StereoPannerNode is not defined"
+      },
+      {
+        "name": "api.StorageAccessHandle",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.BroadcastChannel",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"BroadcastChannel\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.caches",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"caches\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.createObjectURL",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"createObjectURL\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.estimate",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"estimate\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.getDirectory",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"getDirectory\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.indexedDB",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"indexedDB\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.localStorage",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"localStorage\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.locks",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"locks\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.revokeObjectURL",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"revokeObjectURL\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.sessionStorage",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"sessionStorage\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.StorageAccessHandle.SharedWorker",
+        "info": {
+          "code": "\"StorageAccessHandle\" in self && \"SharedWorker\" in StorageAccessHandle.prototype",
+          "exposure": "Window"
+        },
+        "result": false
       },
       {
         "name": "api.StorageBucket",
@@ -82689,9 +82858,25 @@
         "result": false
       },
       {
+        "name": "api.XRWebGLDepthInformation.imageIndex",
+        "info": {
+          "code": "\"XRWebGLDepthInformation\" in self && \"imageIndex\" in XRWebGLDepthInformation.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
         "name": "api.XRWebGLDepthInformation.texture",
         "info": {
           "code": "\"XRWebGLDepthInformation\" in self && \"texture\" in XRWebGLDepthInformation.prototype",
+          "exposure": "Window"
+        },
+        "result": false
+      },
+      {
+        "name": "api.XRWebGLDepthInformation.textureType",
+        "info": {
+          "code": "\"XRWebGLDepthInformation\" in self && \"textureType\" in XRWebGLDepthInformation.prototype",
           "exposure": "Window"
         },
         "result": false
@@ -83577,17 +83762,17 @@
         "result": true
       },
       {
-        "name": "api.SubtleCrypto.deriveKey.derivedKeyAlgorithm_option_hkdf",
+        "name": "api.SubtleCrypto.deriveKey.derivedKeyAlgorithm_option_hmac",
         "info": {
-          "code": "(function () {\n  if (!(\"crypto\" in self)) {\n    return { result: false, message: \"crypto is not defined\" };\n  }\n  var instance = crypto.subtle || crypto.webkitSubtle;\n  return instance\n    .generateKey(\n      {\n        name: \"ECDH\",\n        namedCurve: \"P-384\",\n      },\n      true,\n      [\"deriveKey\"],\n    )\n    .then(function (keys) {\n      return instance.deriveKey(\n        {\n          name: \"ECDH\",\n          public: keys.publicKey,\n        },\n        keys.privateKey,\n        {\n          name: \"HKDF\",\n          hash: \"SHA-256\",\n          salt: new Uint8Array(),\n          info: new Uint8Array(),\n        },\n        false,\n        [\"deriveKey\"],\n      );\n    })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+          "code": "(function () {\n  if (!(\"crypto\" in self)) {\n    return { result: false, message: \"crypto is not defined\" };\n  }\n  var instance = crypto.subtle || crypto.webkitSubtle;\n  return instance\n    .generateKey(\n      {\n        name: \"ECDH\",\n        namedCurve: \"P-384\",\n      },\n      true,\n      [\"deriveKey\"],\n    )\n    .then(function (keys) {\n      return instance.deriveKey(\n        {\n          name: \"ECDH\",\n          public: keys.publicKey,\n        },\n        keys.privateKey,\n        {\n          name: \"HMAC\",\n          hash: \"SHA-512\",\n          length: 256,\n        },\n        true,\n        [\"sign\", \"verify\"],\n      );\n    })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
           "exposure": "Window"
         },
         "result": true
       },
       {
-        "name": "api.SubtleCrypto.deriveKey.derivedKeyAlgorithm_option_hmac",
+        "name": "api.SubtleCrypto.deriveKey.derivedKeyAlgorithm_option_hkdf",
         "info": {
-          "code": "(function () {\n  if (!(\"crypto\" in self)) {\n    return { result: false, message: \"crypto is not defined\" };\n  }\n  var instance = crypto.subtle || crypto.webkitSubtle;\n  return instance\n    .generateKey(\n      {\n        name: \"ECDH\",\n        namedCurve: \"P-384\",\n      },\n      true,\n      [\"deriveKey\"],\n    )\n    .then(function (keys) {\n      return instance.deriveKey(\n        {\n          name: \"ECDH\",\n          public: keys.publicKey,\n        },\n        keys.privateKey,\n        {\n          name: \"HMAC\",\n          hash: \"SHA-512\",\n          length: 256,\n        },\n        true,\n        [\"sign\", \"verify\"],\n      );\n    })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
+          "code": "(function () {\n  if (!(\"crypto\" in self)) {\n    return { result: false, message: \"crypto is not defined\" };\n  }\n  var instance = crypto.subtle || crypto.webkitSubtle;\n  return instance\n    .generateKey(\n      {\n        name: \"ECDH\",\n        namedCurve: \"P-384\",\n      },\n      true,\n      [\"deriveKey\"],\n    )\n    .then(function (keys) {\n      return instance.deriveKey(\n        {\n          name: \"ECDH\",\n          public: keys.publicKey,\n        },\n        keys.privateKey,\n        {\n          name: \"HKDF\",\n          hash: \"SHA-256\",\n          salt: new Uint8Array(),\n          info: new Uint8Array(),\n        },\n        false,\n        [\"deriveKey\"],\n      );\n    })\n    .then(function () {\n      return true;\n    })\n    .catch(function (e) {\n      return { result: false, message: e.message };\n    });\n})();\n",
           "exposure": "Window"
         },
         "result": true
